@@ -30,7 +30,7 @@ jobs:
         run: echo Hello, world!
 
       - name: Official SonarQube Scan
-        run: /opt/sonar-scanner/sonar-scanner -Dsonar.projectKey=django
+        run: /opt/sonar-scanner/bin/sonar-scanner -Dsonar.projectKey=django
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
