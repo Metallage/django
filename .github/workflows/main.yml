@@ -28,11 +28,14 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
-
+      
       - name: Official SonarQube Scan
-        run: /opt/sonar-scanner/bin/sonar-scanner -Dsonar.projectKey=django
+        uses: SonarSource/sonarqube-scan-action@v1.1.0
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+        with:
+          args: >
+            -Dsonar.projectKey=django
             
 
