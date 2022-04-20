@@ -33,6 +33,7 @@ jobs:
         with:
           args: >
             -Dsonar.projectKey=jango
+            -Dsonar.qualitygate.wait=true
 
 
 
